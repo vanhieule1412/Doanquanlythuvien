@@ -1,0 +1,91 @@
+﻿@model Doanquanlythuvien.Models.SACH
+
+@{
+    ViewBag.Title = "xemSach";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+
+
+<div>
+    <h4>SACH</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaSach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaSach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenSach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaNXB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNXB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaTacGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaTacGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaTheLoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaTheLoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenNXB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNXB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenTacGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTacGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenTheLoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTheLoai)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Formsuasach", new {  id = Model.MaSach  }) |
+    @Html.ActionLink("Back to List", "IndexS")
+</p>

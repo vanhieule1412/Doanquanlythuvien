@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Doanquanlythuvien.Models.SACH>
+
+@{
+    ViewBag.Title = "IndexS";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>Quản Lý Sách</h2>
+
+<p>
+    @Html.ActionLink("Thêm sách", "Fromthemsach")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaSach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenSach)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.MaNXB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaTacGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaTheLoai)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            
+            @Html.DisplayNameFor(model=> model.TenNXB)
+            
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenTacGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenTheLoai)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaSach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSach)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.MaNXB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaTacGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaTheLoai)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNXB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenTacGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenTheLoai)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Fromsuasach", new {  id=item.MaSach,item.MaNXB,item.MaTacGia,item.MaTheLoai }) |
+            @Html.ActionLink("Details", "xemSach", new {  id=item.MaSach  }) |
+            @Html.ActionLink("Delete", "xoaSach", new { id=item.MaSach })
+        </td>
+    </tr>
+}
+
+</table>

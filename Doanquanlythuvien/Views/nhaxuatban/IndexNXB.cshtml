@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Doanquanlythuvien.Models.NXB>
+
+@{
+    ViewBag.Title = "IndexNXB";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>Quản lý NXB</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới NXB","Formthemnhaxuatban")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaNXB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenNXB)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNXB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNXB)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Formsuanhaxuatban", new {  id=item.MaNXB }) |
+            @Html.ActionLink("Details", "xemnxb", new { id=item.MaNXB }) |
+            @Html.ActionLink("Delete", "xoaNhaxuatban", new {  id=item.MaNXB  })
+        </td>
+    </tr>
+}
+
+</table>

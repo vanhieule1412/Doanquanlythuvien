@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Doanquanlythuvien.Models.TACGIA>
+
+@{
+    ViewBag.Title = "IndexTG";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>Quản lý Tác Giả</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới TG","Formthemtacgia")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaTacGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenTacGia)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaTacGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenTacGia)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Formsuatacgia", new { id=item.MaTacGia  }) |
+            @Html.ActionLink("Details", "xemtg", new { id=item.MaTacGia }) |
+            @Html.ActionLink("Delete", "xoaTacgia", new {  id=item.MaTacGia })
+        </td>
+    </tr>
+}
+
+</table>
