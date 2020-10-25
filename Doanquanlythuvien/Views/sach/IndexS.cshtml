@@ -8,7 +8,7 @@
 <h2>Quản Lý Sách</h2>
 
 <p>
-    @Html.ActionLink("Thêm sách", "Fromthemsach")
+    @Html.ActionLink("Thêm sách", "Fromthemsach", "sach", null,new {@class="btn btn-primary" })
 </p>
 <table class="table">
     <tr>
@@ -64,13 +64,13 @@
             @Html.DisplayFor(modelItem => item.SoLuong)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TenNXB)
+            @Html.DisplayFor(modelItem => item.NXB.TenNXB)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TenTacGia)
+            @Html.DisplayFor(modelItem => item.TACGIA.TenTacGia)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TenTheLoai)
+            @Html.DisplayFor(modelItem => item.THELOAI.TenTheLoai)
         </td>
         <td>
             @Html.ActionLink("Edit", "Fromsuasach", new {  id=item.MaSach,item.MaNXB,item.MaTacGia,item.MaTheLoai }) |

@@ -31,16 +31,18 @@ namespace Doanquanlythuvien_Htmlhelper.Controllers
             //}
             //ViewBag.nXBs = selectListItems;
 
-            List<Doanquanlythuvien.Models.NXB>nXBs = dc.NXBs.ToList();
-            ViewBag.nXBs = new SelectList(nXBs, "MaNXB", "TenNXB");
-            List<Doanquanlythuvien.Models.TACGIA> tACGIAs = dc.TACGIAs.ToList();
-            ViewBag.tACGIAs = new SelectList(tACGIAs, "MaTacGia", "TenTacGia");
-            List<Doanquanlythuvien.Models.THELOAI> tHELOAIs= dc.THELOAIs.ToList();
-            ViewBag.tHELOAIs = new SelectList(tHELOAIs, "MaTheLoai", "TenTheLoai");
+            
+            ViewBag.DSnxb = dc.NXBs.ToList();
+            ViewBag.DStacgia = dc.TACGIAs.ToList();
+            ViewBag.DStheloai = dc.THELOAIs.ToList();
+            //List<Doanquanlythuvien.Models.TACGIA> tACGIAs = dc.TACGIAs.ToList();
+            //ViewBag.tACGIAs = new SelectList(tACGIAs, "MaTacGia", "TenTacGia");
+            //List<Doanquanlythuvien.Models.THELOAI> tHELOAIs = dc.THELOAIs.ToList();
+            //ViewBag.tHELOAIs = new SelectList(tHELOAIs, "MaTheLoai", "TenTheLoai");
             return View();
 
         }
-        
+        [HttpPost]
         public ActionResult themSach(Doanquanlythuvien.Models.SACH sACH)
         {
             if (ModelState.IsValid)
@@ -59,10 +61,13 @@ namespace Doanquanlythuvien_Htmlhelper.Controllers
 
 
                 dc.SACHes.Add(sACH);
-                
                 dc.SaveChanges();
+                return RedirectToAction("IndexS");
             }
-            return RedirectToAction("IndexS");
+            ViewBag.DSnxb = dc.NXBs.ToList();
+            ViewBag.DStacgia = dc.TACGIAs.ToList();
+            ViewBag.DStheloai = dc.THELOAIs.ToList();
+            return View("Fromthemsach");
         }
 
         public ActionResult Fromsuasach()
@@ -74,8 +79,6 @@ namespace Doanquanlythuvien_Htmlhelper.Controllers
             List<Doanquanlythuvien.Models.THELOAI> tHELOAIs = dc.THELOAIs.ToList();
             ViewBag.tHELOAIs = new SelectList(tHELOAIs, "MaTheLoai", "TenTheLoai");
             return View();
-           
-
         }
         public ActionResult suaSach(Doanquanlythuvien.Models.SACH sACH)
         {
@@ -92,8 +95,12 @@ namespace Doanquanlythuvien_Htmlhelper.Controllers
                 aCH.TenTheLoai = sACH.TenTheLoai;
                 aCH.SoLuong = sACH.SoLuong;
                 dc.SaveChanges();
+                //return RedirectToAction("IndexS");
             }
             return RedirectToAction("IndexS");
+
+            //return View();
+
         }
         public ActionResult xemSach(string id)
         {

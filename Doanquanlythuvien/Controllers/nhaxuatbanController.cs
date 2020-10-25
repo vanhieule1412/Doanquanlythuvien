@@ -19,6 +19,15 @@ namespace Doanquanlythuvien_Htmlhelper.Controllers
         public ActionResult Formthemnhaxuatban()
         {
             return View();
+            //List<Doanquanlythuvien.Models.CNxb> ds = new List<Doanquanlythuvien.Models.CNxb>();
+            //foreach (var a in dc.NXBs.ToList())
+            //{
+            //    Doanquanlythuvien.Models.CNxb nxb = new Doanquanlythuvien.Models.CNxb();
+            //    nxb.MaNXB = a.MaNXB;
+            //    nxb.TenNXB = a.TenNXB;
+            //    ds.Add(nxb);
+            //}
+            //return View(ds);
         }
         public ActionResult themNhaxuatban(Doanquanlythuvien.Models.NXB xB)
         {
